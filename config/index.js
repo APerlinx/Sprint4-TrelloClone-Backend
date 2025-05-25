@@ -1,18 +1,21 @@
-import configProd from './prod.js'
-import configDev from './dev.js'
-
+import dotenv from 'dotenv'
+dotenv.config()
 
 export var config
 
 if (process.env.NODE_ENV === 'production') {
-  config = configProd
-  console.log('prod');
-  
+  config = {
+    dbURL: process.env.DB_URL,
+    dbName: process.env.DB_NAME,
+  }
+  console.log('prod')
 } else {
-  config = configProd
-  console.log('dev');
-  // config = configDev
+  config = {
+    dbURL: process.env.DB_URL,
+    dbName: process.env.DB_NAME,
+  }
+
+  console.log('dev')
 }
+
 config.isGuestMode = true
-
-

@@ -1,4 +1,4 @@
 export default {
-  dbURL: 'mongodb+srv://shay:shay1992@cluster0.vsvnkwd.mongodb.net/',
-  dbName : 'tester_db'
+  dbURL: process.env.DB_URL,
+  dbName: process.env.DB_NAME,
 }
